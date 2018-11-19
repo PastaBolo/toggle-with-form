@@ -1,13 +1,15 @@
 <form #templateForm="ngForm">
-  <app-checkbox name="state" [ngModel]=true></app-checkbox>
+  <app-checkbox name="state" [ngModel]="true" required></app-checkbox>
 </form>
-form : {{ templateForm.value | json }}
+form value : {{ templateForm.value | json }}
+form valid : {{ templateForm.valid | json }}
 
 <form [formGroup]="form">
   <app-checkbox formControlName="control"></app-checkbox>
 </form>
-<app-checkbox [formControl]="form.get('control')"></app-checkbox>
-form state : {{ form.value | json }}
+<!-- <app-checkbox [formControl]="form.get('control')"></app-checkbox> -->
+form value : {{ form.value | json }}
+form state : {{ form.valid | json }}
 
 <app-checkbox [(ngModel)]="model"></app-checkbox>
 model state : {{ model }}

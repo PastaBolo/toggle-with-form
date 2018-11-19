@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { FormGroup, FormControl } from '@angular/forms'
+import { FormGroup, FormControl, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import { FormGroup, FormControl } from '@angular/forms'
 })
 export class AppComponent {
   form = new FormGroup({
-    control: new FormControl(true)
+    control: new FormControl(true, Validators.requiredTrue)
   })
   model = true
 }
